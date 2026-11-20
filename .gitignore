@@ -1,0 +1,21 @@
+# Python environment
+.venv/
+
+# Python cache
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# IDE settings
+.idea/
+.vscode/
+
+# Claude local settings
+.claude/
+
+# Environment variables and secrets
+.env
+.env.*
+
+# macOS files
+.DS_Store

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hebrew Date Converter</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <main class="card">
+    <h1>Hebrew Date Converter</h1>
+    <p class="subtitle">Pick a Gregorian date to see the Hebrew date.</p>
+
+    <form id="convert-form" novalidate>
+      <label for="date-input">Gregorian date</label>
+      <div class="row">
+        <input type="date" id="date-input" name="date" required>
+        <button type="submit" id="convert-button">Convert</button>
+      </div>
+    </form>
+
+    <p id="error" class="error" role="alert" hidden></p>
+
+    <section id="result" class="result" aria-live="polite" hidden>
+      <p class="label">Hebrew date</p>
+      <p id="hebrew-text" class="hebrew" lang="he" dir="rtl"></p>
+      <p id="hebrew-latin" class="latin"></p>
+      <ul id="events" class="events"></ul>
+    </section>
+
+    <footer>Data from <a href="https://www.hebcal.com" target="_blank" rel="noopener">Hebcal.com</a></footer>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

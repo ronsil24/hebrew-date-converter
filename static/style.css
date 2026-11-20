@@ -1,0 +1,220 @@
+:root {
+  --purple: #6d4aff;
+  --purple-dark: #5835e8;
+  --purple-soft: #ede8ff;
+  --lavender-bg: #f4f1ff;
+  --text: #1c1838;
+  --text-muted: #6b6889;
+  --border: #ddd6fb;
+  --error-bg: #fff1f3;
+  --error-text: #c0263d;
+  --shadow: 0 10px 30px rgba(76, 52, 180, 0.12), 0 2px 6px rgba(76, 52, 180, 0.06);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Our CSS sets `display` on some elements, so make sure [hidden] still hides them. */
+[hidden] {
+  display: none !important;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: 17px;
+  line-height: 1.5;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 15% 10%, #e6defe 0%, transparent 45%),
+    radial-gradient(circle at 85% 90%, #e9e3ff 0%, transparent 40%),
+    var(--lavender-bg);
+}
+
+.card {
+  width: 100%;
+  max-width: 480px;
+  background: #ffffff;
+  border: 1px solid #ece8fb;
+  border-radius: 20px;
+  padding: 32px 28px 24px;
+  box-shadow: var(--shadow);
+}
+
+h1 {
+  margin: 0 0 6px;
+  font-size: 1.85rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.subtitle {
+  margin: 0 0 24px;
+  font-size: 1.05rem;
+  color: var(--text-muted);
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+}
+
+input[type="date"] {
+  flex: 1;
+  min-width: 0;
+  padding: 12px 14px;
+  font-family: inherit;
+  font-size: 1.05rem;
+  color: var(--text);
+  background: #fbfaff;
+  border: 1.5px solid var(--border);
+  border-radius: 12px;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+input[type="date"]:focus {
+  outline: none;
+  border-color: var(--purple);
+  box-shadow: 0 0 0 4px rgba(109, 74, 255, 0.15);
+}
+
+button {
+  padding: 12px 22px;
+  font-family: inherit;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: linear-gradient(135deg, #7c5cff, var(--purple-dark));
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(109, 74, 255, 0.35);
+  cursor: pointer;
+  transition: transform 0.1s, box-shadow 0.15s, filter 0.15s;
+}
+
+button:hover {
+  filter: brightness(1.07);
+  box-shadow: 0 6px 18px rgba(109, 74, 255, 0.45);
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+button:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(109, 74, 255, 0.3);
+}
+
+button:disabled {
+  background: #b9a9ff;
+  box-shadow: none;
+  cursor: wait;
+}
+
+.error {
+  margin: 18px 0 0;
+  padding: 12px 14px;
+  border: 1px solid #fbd0d7;
+  border-radius: 12px;
+  background: var(--error-bg);
+  color: var(--error-text);
+  font-weight: 500;
+}
+
+.result {
+  margin-top: 22px;
+  padding: 18px 20px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: linear-gradient(180deg, #f8f6ff, var(--purple-soft));
+}
+
+.result .label {
+  margin: 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--purple);
+}
+
+/* Hebrew text: the HTML sets dir="rtl", so it reads and aligns right-to-left. */
+.hebrew {
+  margin: 8px 0 6px;
+  font-family: "Noto Sans Hebrew", "Arial Hebrew", "Segoe UI", Arial, sans-serif;
+  font-size: 2.1rem;
+  font-weight: 700;
+  line-height: 1.4;
+  text-align: right;
+  unicode-bidi: isolate;
+  color: var(--text);
+}
+
+.latin {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #3d3960;
+}
+
+.events {
+  margin: 12px 0 0;
+  padding-left: 22px;
+  color: var(--text-muted);
+}
+
+.events li::marker {
+  color: var(--purple);
+}
+
+footer {
+  margin-top: 26px;
+  font-size: 0.85rem;
+  color: #9a97b5;
+  text-align: center;
+}
+
+footer a {
+  color: var(--purple);
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 420px) {
+  body {
+    font-size: 16px;
+  }
+
+  .card {
+    padding: 26px 20px 20px;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  .row {
+    flex-direction: column;
+  }
+
+  .hebrew {
+    font-size: 1.8rem;
+  }
+}
